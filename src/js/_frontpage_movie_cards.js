@@ -33,9 +33,14 @@ export default class MovieCardGenerator {
       movieCardButton.textContent = 'Boka biljett';
       movieCardButton.setAttribute('aria-label', 'Boka biljett');
 
+      const movieGenre = document.createElement('span');
+      movieGenre.classList = 'movie-card__genre';
+      movieGenre.textContent = 'Animation';
+
       movieCard.appendChild(movieCardImage);
       movieCard.appendChild(movieCardTitle);
       movieCard.appendChild(movieCardDate);
+      movieCard.appendChild(movieGenre);
       movieCard.appendChild(movieCardButton);
       moviesListItem.appendChild(movieCard);
       moviesList.appendChild(moviesListItem);
