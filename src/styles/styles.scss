@@ -1,6 +1,9 @@
 @use 'header';
 @use 'variables' as *;
+
+@import 'footer';
 @import '_main_movie';
+
 
 * {
   margin: 0;
