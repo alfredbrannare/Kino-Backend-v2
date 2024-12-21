@@ -36,3 +36,16 @@
     padding-bottom: 1rem;
     }
 }
+
+.line-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.horizontal-line {
+    width: 85%;
+    height: 0.1rem;
+    background-color: $gray;
+    margin: 2rem;
+}
