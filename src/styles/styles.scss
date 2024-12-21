@@ -2,10 +2,15 @@
 @use 'variables' as *;
 @import 'footer';
 
+@import 'footer';
+@import '_main_movie';
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: $font-family-base;
 }
 
 body {
