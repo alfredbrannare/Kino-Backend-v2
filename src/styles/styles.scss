@@ -1,6 +1,6 @@
 @use 'header';
 @use 'variables' as *;
-@import 'footer';
+@use 'features';
 
 @import 'footer';
 @import '_main_movie';
