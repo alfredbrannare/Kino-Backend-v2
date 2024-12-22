@@ -1,0 +1,43 @@
+.header {
+    position: relative;
+    background-image: url('/images/header.jpg');
+    background-size: cover;
+    background-position: center top;
+    height: 70vh;
+  }
+  
+  .header__nav-list {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 2rem 10rem 0 0;
+  }
+  
+  .header__logo {
+    background-image: url('/images/kino-logo.png');
+    background-size: cover;
+    width: 10rem;
+    height: 5rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .header__nav-item {
+    all: unset;
+  }
+  
+  .header__nav-link {
+    all: unset;
+    color: white;
+    font-size: 1.4rem;
+  }
+  
+  .header__bookTicket {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 10%;
+    left: 45%;
+  }
