@@ -3,12 +3,12 @@
 
 /* Styles for the .live section */
 .live {
+  font-family: Helvetica;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
-  padding: 20px;
+  justify-content: flex-start;
+  padding-top: 1rem;
 
   .live__header {
     color: $gray;
@@ -26,17 +26,17 @@
     gap: 1rem;
 
     .live__list-item {
-      border-radius: 0.2rem;
-      color: $gray;
-      background-color: darkgray;
+      border-bottom-left-radius: 0.2rem;
+      border-bottom-right-radius: 0.2rem;
+      color: black;
+      background-color: $gray;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      width: 230px;
       margin-bottom: 4rem;
       text-align: left;
 
-      .live__list-item-img {
+      .live__list-item-img-wrapper {
         width: 100%;
         margin-bottom: 10px;
 
@@ -49,24 +49,26 @@
       .live__list-item-title {
         font-size: $font-size-base;
         font-weight: bold;
-        margin-left: $space-xs;
-        margin-bottom: $space-xs;
+        margin: 0 $space-xs $space-xs;
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
-        gap: 4rem;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
 
-        .live__action-button {
+        .live__list-item-btn {
+          margin-left: auto;
+          margin-right: 1rem;
           padding: $btn-padding;
           font-size: $font-size-base;
           font-family: $font-family-base;
           color: $gray;
           background-color: $red;
-          border: 1px solid $gray;
+          border: 3px solid $gray;
           font-weight: 550;
           cursor: pointer;
           text-align: center;
-          cursor: pointer;
+          max-width: calc(50% - $space-xs);
         }
       }
 
