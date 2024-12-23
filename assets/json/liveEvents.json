@@ -7,7 +7,7 @@
       "desc": "Stormusikal baserat på romanen 'Fantomen på Operan' av Gaston Leroux från 1910.",
       "image": "https://placehold.co/260x380/FFFFFF/000000",
       "genre": "Musikal",
-      "speltid": 160
+      "runtime": 160
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "desc": "Fidelio, Beethovens enda opera och hans storslagna hyllning till kärleken.",
       "image": "https://placehold.co/260x380/777575/000000",
       "genre": "Opera",
-      "speltid": 184
+      "runtime": 184
     },
     {
       "id": 3,
@@ -25,7 +25,7 @@
       "desc": "The Royal Ballets version av den klassiska kärlekshistorien om spelet mellan gott och ont.",
       "image": "https://placehold.co/260x380/000000/FFFFFF",
       "genre": "Balett",
-      "speltid": 110
+      "runtime": 110
     }
   ]
 }
