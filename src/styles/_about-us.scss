@@ -1,0 +1,23 @@
+@use 'variables' as *;
+
+.about-us__section {
+  border: 1px solid $gray;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  color: $gray;
+
+  .about-us__text {
+    text-align: center;
+    font-size: $font-size-lg;
+    margin-bottom: $space-md;
+  }
+
+  .about-us__map-image {
+    width: 25%;
+    float: left;
+  }
+}
