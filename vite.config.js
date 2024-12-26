@@ -7,6 +7,7 @@ export default defineConfig({
       input: {
         main: './index.html',
         aboutUs: './about-us.html',
+        movies: './movies.html',
       },
     },
   },

@@ -1,0 +1,37 @@
+@use 'variables' as *;
+
+.about-us__section {
+  //   border: 1px solid $gray;
+  display: flex;
+  flex-direction: column;
+  //   align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  color: $gray;
+  margin: 0 5%;
+
+  h2 {
+    margin-left: 10%;
+    margin-bottom: $space-md;
+  }
+  p {
+    margin: 1rem;
+  }
+  .about-us__content {
+    display: flex; // Keep this to arrange children in a row
+    // align-items: flex-start; // Align items at the top
+
+    .about-us__text {
+      font-size: $font-size-lg;
+      margin-bottom: $space-md;
+      margin-left: $space-md; // Optional: add left margin to create space from the image
+    }
+
+    .about-us__map-image {
+      border: 5px solid #dcdcdc;
+      margin-right: $space-md; // Space between image and text
+      width: 30%; // Set width
+      height: auto; // Maintain aspect ratio
+    }
+  }
+}
