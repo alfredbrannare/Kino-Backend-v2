@@ -35,3 +35,41 @@
     }
   }
 }
+
+.rules {
+  margin-top: 5%;
+
+  .rules__heading {
+    justify-self: end;
+    color: $gray;
+    margin-right: 15%;
+    margin-bottom: $space-md;
+    text-decoration: underline;
+  }
+
+  .rules__section {
+    //   border: 1px solid $gray;
+    display: flex;
+    // flex-direction: column;
+    // align-items: flex-start;
+    // justify-content: center;
+    // padding: 50px 0;
+    color: $gray;
+    margin: 0 5%;
+
+    .rules__image {
+      width: 25%;
+      height: 25%;
+      float: right;
+      margin-left: 10%;
+    }
+
+    p {
+      margin: 1rem 0;
+      width: 30ch;
+    }
+    .rules__list {
+      padding-left: 5%;
+    }
+  }
+}
