@@ -16,11 +16,13 @@ export default class SearchFilter extends EventTarget {
         searchBar.append(searchBarLabel);
 
         const searchBarInput = document.createElement('input');
-        input.addEventListener('keyup', () => {
-            this.searchString = input.value;
+        searchBarInput.addEventListener('keyup', () => {
+            this.searchString = searchBarInput.value;
             this.dispatchEvent(new Event('change'));
         });
 
         searchBar.append(searchBarInput);
+
+        return searchBar;
     }
 }
