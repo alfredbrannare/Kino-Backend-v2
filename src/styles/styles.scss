@@ -6,8 +6,11 @@
 @use 'about-us';
 @use 'footer';
 @use '_main_movie';
+@use '_festival';
+@use '_buttons_membership_events';
 @use '_tagline';
 @import '_all_movie';
+
 
 * {
   margin: 0;
