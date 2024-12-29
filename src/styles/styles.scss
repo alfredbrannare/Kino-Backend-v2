@@ -7,6 +7,7 @@
 @use 'footer';
 @use '_main_movie';
 @use '_tagline';
+@import '_all_movie';
 
 * {
   margin: 0;
