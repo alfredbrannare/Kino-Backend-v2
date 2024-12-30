@@ -1,32 +1,35 @@
 export default class MovieCardGenerator {
-  constructor() {}
+  constructor(apiBackend) {
+    this.apiBackend = apiBackend;
+  }
 
-  CardGenerator(count = 1) {
+  async CardGenerator(count = 1) {
     const moviesList = document.querySelector('.movies__list');
+    const movies = await this.apiBackend.loadAllFilms();
+    const moviesToDisplay = movies.slice(0, count);
 
-    for (let i = 0; i < count; i++) {
-      //Replace with forEach when we get API
+    moviesToDisplay.forEach((movie) => {
       const moviesListItem = document.createElement('li');
       moviesListItem.classList = 'movies__list-item';
 
       const movieCard = document.createElement('article');
       movieCard.classList = 'movie-card';
-      movieCard.setAttribute('aria-label', '${title}');
+      movieCard.setAttribute('aria-label', `${movie.title}`);
 
       const movieCardImage = document.createElement('img');
       movieCardImage.classList = 'movie-card__image';
-      movieCardImage.src = 'https://cinemalightboxes.com/cdn/shop/files/The_Grinch_1296x.jpg?v=1727185330'; // Change to image from API when we got it
-      movieCardImage.alt = 'Omslag för filmen ${title}'; // Change/modify to `` when we got API
+      movieCardImage.src = `${movie.image}`;
+      movieCardImage.alt = `Omslag för filmen ${movie.title}`;
       movieCardImage.setAttribute('aria-hidden', 'false');
 
       const movieCardTitle = document.createElement('h3');
       movieCardTitle.classList = 'movie-card__title';
-      movieCardTitle.textContent = 'The Grinch';
+      movieCardTitle.textContent = `${movie.title}`;
 
       const movieCardDate = document.createElement('time');
       movieCardDate.classList = 'movie-card__date';
-      movieCardDate.setAttribute('aria-label', 'Premiär');
-      movieCardDate.textContent = '2000-12-01';
+      movieCardDate.setAttribute('aria-label', `Premiär ${movie.date}`);
+      movieCardDate.textContent = `${movie.date}`;
 
       const movieCardButton = document.createElement('button');
       movieCardButton.classList = 'movie-card__button';
@@ -44,6 +47,6 @@ export default class MovieCardGenerator {
       movieCard.appendChild(movieCardButton);
       moviesListItem.appendChild(movieCard);
       moviesList.appendChild(moviesListItem);
-    }
+    });
   }
 }
