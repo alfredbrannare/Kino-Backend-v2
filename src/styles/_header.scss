@@ -78,7 +78,6 @@
     background-color: $gray;
     height: 0.5rem;
     width: 100%;
-    transition: all 0.3s ease-in-out;
   }
 
   .hamburger__items {
@@ -87,15 +86,21 @@
     flex-direction: column;
     background-color: $red;
     position: absolute;
-    top: 10rem;
+    top: 0;
     right: 0;
     width: 100%;
     text-align: center;
     padding: 0;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
   }
 
   .hamburger__list {
     padding: 1rem 0;
+  }
+
+  .hamburger__list:hover {
+    scale: (1.1);
   }
 
   .hamburger__items a {
@@ -106,6 +111,46 @@
 
   .hamburger__items.active {
     display: flex;
+    z-index: 4;
+    border-bottom: 2rem solid $red;
   }
 
+  .hamburger__close {
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border: none;
+    position: relative;
+    outline: none;
+    padding: 2rem;
+  }
+
+  .hamburger__close:hover {
+    scale: (1.2);
+  }
+
+  .hamburger__close::before,
+  .hamburger__close::after {
+    content: '';
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 2rem;
+    height: 0.3rem;
+    background-color: $gray; 
+    transform-origin: center;
+  }
+
+  .hamburger__close::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .hamburger__close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
  }
