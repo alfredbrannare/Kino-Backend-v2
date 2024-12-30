@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .header {
   position: relative;
   background-image: url('/images/header.jpg');
@@ -10,7 +12,7 @@
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  padding: 2rem 10rem 0 0;
+  padding: 1rem 10rem 2.5rem 0;
 }
 
 .header__logo {
@@ -33,6 +35,12 @@
   font-size: 1.4rem;
 }
 
+.header__nav-link:hover {
+  color: $red;
+  font-weight: 700;
+  cursor: pointer;
+}
+
 .header__bookTicket {
   position: absolute;
   display: flex;
@@ -40,4 +48,28 @@
   align-items: center;
   bottom: 10%;
   left: 45%;
+}
+
+.header__BookTicket-button {
+  padding: $btn-padding;
+  font-size: $font-size-base;
+  font-family: $font-family-base;
+  color: $red;
+  background-color: transparent;
+  border: 3px solid $red;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+}
+
+.header__BookTicket-button:hover {
+  color: $gray;
+  background-color: $red;
+  border: 3px solid $gray;
+}
+
+@media (max-width: 800px) { 
+  .header__nav-list {
+    display: none;
+  }
 }
