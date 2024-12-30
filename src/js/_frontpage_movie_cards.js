@@ -38,7 +38,8 @@ export default class MovieCardGenerator {
 
       const movieGenre = document.createElement('span');
       movieGenre.classList = 'movie-card__genre';
-      movieGenre.textContent = 'Animation';
+      movieGenre.textContent = `${movie.genre}`;
+      movieGenre.setAttribute('aria-label', `Genre: ${movie.genre}`);
 
       movieCard.appendChild(movieCardImage);
       movieCard.appendChild(movieCardTitle);
