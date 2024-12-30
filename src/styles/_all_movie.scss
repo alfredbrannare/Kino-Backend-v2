@@ -1,0 +1,20 @@
+.movies__list-all {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.allmovies {
+  margin: 0.5rem;
+  color: white;
+}
+
+.allmovies__image {
+  height: calc(220px * 2);
+  width: calc(148px * 2);
+}
+.allmovies__desc {
+    width: calc(148px * 2);
+}
+.allmovies__title {
+    width: calc(148px * 2);
+}
