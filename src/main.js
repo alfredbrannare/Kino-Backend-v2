@@ -4,6 +4,7 @@ import './styles/styles.scss';
 import MovieCardGenerator from './js/_frontpage_movie_cards.js';
 import LoadAllFilmsPage from './js/LoadAllFilmsPage.js';
 import ApiBackend from './js/ApiBackend.js';
+import MobileMenu from './js/MobileMenu.js';
 
 if (document.querySelector('.movies__list-all')) {
   const loadingMessage = document.createElement('div');
@@ -21,25 +22,3 @@ if (document.querySelector('.movies__list-all')) {
   const movieCardGenerator = new MovieCardGenerator();
   movieCardGenerator.CardGenerator(4);
 }
-//Mobile-menu
-document.addEventListener('DOMContentLoaded', () => {
-  const hamburger = document.querySelector('.hamburger'); // Use the class .hamburger
-  const menu = document.querySelector('.hamburger__items');
-  const closeButton = document.querySelector('.hamburger__close'); // Select the close button
-
-  if (hamburger && menu) {
-    // Toggle the menu when clicking on the hamburger
-    hamburger.addEventListener('click', () => {
-      menu.classList.toggle('active');
-      hamburger.classList.toggle('open');
-    });
-  }
-
-  // Close the menu when clicking the close button
-  if (closeButton) {
-    closeButton.addEventListener('click', () => {
-      menu.classList.remove('active');
-      hamburger.classList.remove('open');
-    });
-  }
-});
