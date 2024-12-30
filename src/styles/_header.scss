@@ -62,16 +62,50 @@
     flex-direction: column;
     justify-content: space-between;
     width: 6rem;
-    height: 6rem;
+    height: 5rem;
     padding: 1rem;
     cursor: pointer;
   }
 
+  .hamburger:hover {
+    scale: (1.1);
+    .bar {
+      background-color: $red;
+    }
+  }
+
   .bar {
     background-color: $gray;
-    height: 0.8rem;
+    height: 0.5rem;
     width: 100%;
     transition: all 0.3s ease-in-out;
+  }
+
+  .hamburger__items {
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    background-color: $red;
+    position: absolute;
+    top: 10rem;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+
+  .hamburger__list {
+    padding: 1rem 0;
+  }
+
+  .hamburger__items a {
+    color: $gray;
+    text-decoration: none;
+    font-size: 2rem;
+  }
+
+  .hamburger__items.active {
+    display: flex;
   }
 
  }

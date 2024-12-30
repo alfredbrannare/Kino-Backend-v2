@@ -9,7 +9,21 @@
 
   <body>
     <header class="header">
-      <div class="header__logo"></div>
+      <div class="navigation__mobile">
+        <div class="header__logo"></div>
+        <button class="hamburger" aria-label="Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+      <ul class="hamburger__items">
+        <li class ="hamburger__list"><a href= "#">BILJETTER</a></li>
+        <li class ="hamburger__list"><a href= "#">EVENEMANG</a></li>
+        <li class ="hamburger__list"><a href= "#">FILMER</a></li>
+        <li class ="hamburger__list"><a href= "#">MEDLEMSKAP</a></li>
+        <li class ="hamburger__list"><a href= "#">OM OSS</a></li>
+      </ul>
       <nav class="header__nav">
         <ul class="header__nav-list">
           <li class="header__nav-item">
@@ -28,11 +42,6 @@
             <a href="#" class="header__nav-link" aria-label="Go to Om oss">OM OSS</a>
           </li>
         </ul>
-        <button class="hamburger" aria-label="Menu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
       </nav>
       <a class="header__bookTicket" aria-label="Book tickets now">
         <button class="primary_button">BOKA BILJETT</button>
