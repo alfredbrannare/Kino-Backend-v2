@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .header {
   position: relative;
   background-image: url('/images/header.jpg');
@@ -41,3 +43,35 @@
   bottom: 10%;
   left: 45%;
 }
+
+.hamburger {
+  display: none;
+  font-size: 10rem;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .header__nav-list {
+    display: none;
+  }
+
+  .hamburger {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 6rem;
+    height: 6rem;
+    padding: 1rem;
+    cursor: pointer;
+  }
+
+  .bar {
+    background-color: $gray;
+    height: 0.8rem;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+  }
+
+ }
