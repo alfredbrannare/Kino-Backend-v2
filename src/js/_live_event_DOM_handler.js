@@ -29,7 +29,7 @@ export default class LiveEventDOMHandler {
     }
 
     if (!Array.isArray(liveEventData) || liveEventData.length === 0) {
-      this.container.innerHTML = '<p> No love events founds.</p>';
+      this.container.innerHTML = '<p> No live events founds.</p>';
       return;
     }
 
