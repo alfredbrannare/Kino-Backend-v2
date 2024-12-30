@@ -6,7 +6,7 @@ export default class MovieCardGenerator {
   async CardGenerator(count = 1) {
     const moviesList = document.querySelector('.movies__list');
     const movies = await this.apiBackend.loadAllFilms();
-    const moviesToDisplay = movies.slice(0, count);
+    const moviesToDisplay = movies.sort((a, b) => b.rating - a.rating).slice(0, count);
 
     moviesToDisplay.forEach((movie) => {
       const moviesListItem = document.createElement('li');
