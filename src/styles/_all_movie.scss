@@ -1,20 +1,103 @@
-.movies__list-all {
+.movies {
   display: flex;
   flex-wrap: wrap;
 }
 
-.allmovies {
-  margin: 0.5rem;
-  color: white;
+.movies__message__new {
+  font-size: 18px;
+  text-align: center;
+  color: #888;
 }
 
-.allmovies__image {
+.movies__search {
+  position: relative;
+  width: 100%;
+  height: 0.8rem;
+}
+
+  .movies__search input {
+    position: absolute;
+    right: 1.5rem;
+    top: 20%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 400px;
+  }
+.movies__list {
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.movies__list__elem {
+  width: calc(148px * 2);
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.movies__list__elem:hover {
+  transform: translateY(-5px);
+}
+
+.movies__list__elem__image {
   height: calc(220px * 2);
   width: calc(148px * 2);
+  object-fit: cover;
 }
-.allmovies__desc {
-    width: calc(148px * 2);
+
+.movies__list__elem__title {
+  width: calc(145px * 2);
+  font-size: 1.2rem;
+  margin: 1rem;
 }
-.allmovies__title {
-    width: calc(148px * 2);
+
+.movies__list__elem__desc {
+  width: calc(140px * 2);
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0.6rem 1rem;
 }
+
+.movies__list__elem__rating,
+.movies__list__elem__date,
+.movies__list__elem__price,
+.movies__list__elem__seat {
+  font-size: 0.8rem;
+  margin: 0.2rem 1rem;
+  color: #444;
+}
+
+.movies__list__elem__rating {
+  font-weight: bold;
+}
+
+
+// .movies {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+
+// .movies__list_ {
+//   margin: 0.5rem;
+//   color: white;
+// }
+
+// .movies__list__elem__image {
+  // height: calc(220px * 2);
+  // width: calc(148px * 2);
+// }
+// .movies__list__elem__tdesc {
+//     width: calc(148px * 2);
+// }
+// .movies__list__elem__title {
+//     width: calc(148px * 2);
+// }
+
+// .movies_search {
+//   flex-direction: column;
+// }
