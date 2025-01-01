@@ -117,6 +117,9 @@
     display: flex;
     z-index: 4;
     border-bottom: 2rem solid $red;
+    position: fixed;
+    padding-bottom: 1.5rem;
+    border-bottom: 5px solid $gray; 
   }
 
   .hamburger__close {
