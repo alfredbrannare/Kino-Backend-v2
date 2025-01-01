@@ -18,7 +18,7 @@ export default class LoadAllFilmsPage extends EventTarget {
         listContainer.append(filterElem);
 
         const listElem = document.createElement('ul');
-        listElem.className = 'movies__list';
+        listElem.className = 'moviesSecond__list';
         listContainer.append(listElem);
 
         this.films = filmsFromApi.map(filmData => {
@@ -37,16 +37,16 @@ export default class LoadAllFilmsPage extends EventTarget {
 
     renderFilm(data) {
         const movieCard = document.createElement('li');
-        movieCard.classList.add('movies__list__elem');
+        movieCard.classList.add('moviesSecond__list__elem');
 
         movieCard.innerHTML = `
-        <img src="${data.image}" class="movies__list__elem__image"  alt="${data.title}">
-        <h3 class="movies__list__elem__title">${data.title} ${data.year}</h3>
-        <p class="movies__list__elem__desc">${data.desc}</p>
-        <p class="movies__list__elem__rating">Rating: ${data.rating}</p>
-        <p class="movies__list__elem__date">Datum: ${data.date}</p>
-        <p class="movies__list__elem__price">Pris: ${data.price}SEK</p>
-        <p class="movies__list__elem__seat">Platser: ${data.seatsAvailable}</p>
+        <img src="${data.image}" class="moviesSecond__list__elem__image"  alt="${data.title}">
+        <h3 class="moviesSecond__list__elem__title">${data.title}</h3>
+        <p class="moviesSecond__list__elem__desc">${data.desc} <strong>(${data.year})</strong></p>
+        <p class="moviesSecond__list__elem__rating">Rating: ${data.rating}</p>
+        <p class="moviesSecond__list__elem__date">Datum: ${data.date}</p>
+        <p class="moviesSecond__list__elem__price">Pris: ${data.price}SEK</p>
+        <p class="moviesSecond__list__elem__seat">Platser: ${data.seatsAvailable}</p>
     `;
         return movieCard;
     }

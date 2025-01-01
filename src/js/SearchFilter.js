@@ -18,7 +18,7 @@ export default class SearchFilter extends EventTarget {
 
     render(){
         const searchBar = document.createElement('div');
-        searchBar.className = "movies__search"
+        searchBar.className = "moviesSecond__search"
 
         const searchBarInput = document.createElement('input');
         searchBarInput.placeholder = "Sök film";
