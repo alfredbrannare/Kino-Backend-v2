@@ -19,7 +19,8 @@ if (document.querySelector('.movies__list-all')) {
 
   filmList.add(document.querySelector('.movies__list-all'), loadingMessage);
 } else {
-  const movieCardGenerator = new MovieCardGenerator();
+  const backend = new ApiBackend('https://kino-bio-projekt.onrender.com');
+  const movieCardGenerator = new MovieCardGenerator(backend);
   movieCardGenerator.CardGenerator(4);
 }
 
