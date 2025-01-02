@@ -107,3 +107,32 @@
 //     }
 //   }
 // }
+
+.faq__section {
+  //   border: 1px solid $gray;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
+  padding: 50px 0;
+  color: $gray;
+  margin: 0 5%;
+  h2 {
+    margin-left: 4%;
+    margin-bottom: $space-md;
+  }
+  .faq__content {
+    display: flex;
+    margin-top: 2em;
+
+    p {
+      margin: 1rem;
+    }
+
+    .faq__image {
+      width: 75%;
+      height: auto;
+      margin-left: 10%;
+    }
+  }
+}
