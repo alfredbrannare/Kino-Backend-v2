@@ -14,6 +14,7 @@ export default class MovieCardGenerator {
 
       const movieCard = document.createElement('article');
       movieCard.classList = 'movie-card';
+      movieCard.setAttribute('id', `${movie.id}`);
       movieCard.setAttribute('aria-label', `${movie.title}`);
 
       const movieCardImage = document.createElement('img');
