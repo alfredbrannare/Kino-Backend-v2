@@ -4,6 +4,7 @@ import './styles/styles.scss';
 import MovieCardGenerator from './js/_frontpage_movie_cards.js';
 import LoadAllFilmsPage from './js/LoadAllFilmsPage.js';
 import ApiBackend from './js/ApiBackend.js';
+import MobileMenu from './js/MobileMenu.js';
 import initLiveEvents from './js/_initLiveEvents.js';
 
 if (document.querySelector('.movies__list-all')) {
