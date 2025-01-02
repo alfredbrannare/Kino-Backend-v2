@@ -1,41 +1,53 @@
-export default class LoadAllFilmsPage {
+import SearchFilter from "./SearchFilter";
+
+export default class LoadAllFilmsPage extends EventTarget {
     constructor(backend) {
+        super();
         this.backend = backend;
-        this.films = [];
     }
 
-    async add(listElem, loadingElem) {
-        try {
-            loadingElem.style.display = 'block';
+    async start(listContainer) {
+        const filmsFromApi = await this.backend.loadAllFilms();
 
-            const challengesFromApi = await this.backend.loadAllFilms();
+        this.filter = new SearchFilter('');
+        this.filter.addEventListener('change', () => {
+            this.update();
+        });
 
-            challengesFromApi.forEach(filmData => {
-                const film = this.render(filmData);
-                this.films.push(film);
-                listElem.appendChild(film);
-            });
-        } catch (error) {
-            console.error('Error(trying to load film list):', error);
-        } finally {
-            loadingElem.style.display = 'none';
-        }
+        const filterElem = this.filter.render();
+        listContainer.append(filterElem);
+
+        const listElem = document.createElement('ul');
+        listElem.className = 'moviesSecond__list';
+        listContainer.append(listElem);
+
+        this.films = filmsFromApi.map(filmData => {
+            const filmElem = this.renderFilm(filmData);
+            listElem.append(filmElem);
+            return { data: filmData, elem: filmElem };
+        });
     }
 
-    render(data) {
-        const movieCard = document.createElement('div');
-        movieCard.classList.add('allmovies');
+    update() {
+        this.films.forEach(({ data, elem }) => {
+            const doesMatch = this.filter.doesFilmMatch({ data });
+            elem.style.display = doesMatch ? 'block' : 'none';
+        });
+    }
+
+    renderFilm(data) {
+        const movieCard = document.createElement('li');
+        movieCard.classList.add('moviesSecond__list__elem');
 
         movieCard.innerHTML = `
-            <img src="${data.image}" class="allmovies__image"  alt="${data.title}">
-            <h3 class="allmovies__title">${data.title} ${data.year}</h3>
-            <p class="allmovies__desc">${data.desc}</p>
-            <p class="allmovies__rating">Rating: ${data.rating}</p>
-            <p class="allmovies__date">Datum: ${data.date}</p>
-            <p class="allmovies__price">Pris: ${data.price}SEK</p>
-            <p class="allmovies__seat">Platser: ${data.seatsAvailable}</p>
-        `;
-
+        <img src="${data.image}" class="moviesSecond__list__elem__image"  alt="${data.title}">
+        <h3 class="moviesSecond__list__elem__title">${data.title}</h3>
+        <p class="moviesSecond__list__elem__desc">${data.desc} <strong>(${data.year})</strong></p>
+        <p class="moviesSecond__list__elem__rating">Rating: ${data.rating}</p>
+        <p class="moviesSecond__list__elem__date">Datum: ${data.date}</p>
+        <p class="moviesSecond__list__elem__price">Pris: ${data.price}SEK</p>
+        <p class="moviesSecond__list__elem__seat">Platser: ${data.seatsAvailable}</p>
+    `;
         return movieCard;
     }
 }
