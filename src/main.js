@@ -5,6 +5,7 @@ import MovieCardGenerator from './js/_frontpage_movie_cards.js';
 import LoadAllFilmsPage from './js/LoadAllFilmsPage.js';
 import ApiBackend from './js/ApiBackend.js';
 import MobileMenu from './js/MobileMenu.js';
+import initLiveEvents from './js/_initLiveEvents.js';
 
 if (document.querySelector('.movies__list-all')) {
   const loadingMessage = document.createElement('div');
@@ -19,6 +20,9 @@ if (document.querySelector('.movies__list-all')) {
 
   filmList.add(document.querySelector('.movies__list-all'), loadingMessage);
 } else {
-  const movieCardGenerator = new MovieCardGenerator();
+  const backend = new ApiBackend('https://kino-bio-projekt.onrender.com');
+  const movieCardGenerator = new MovieCardGenerator(backend);
   movieCardGenerator.CardGenerator(4);
 }
+
+document.addEventListener('DOMContentLoaded', initLiveEvents);
