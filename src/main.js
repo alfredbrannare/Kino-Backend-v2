@@ -4,6 +4,7 @@ import './styles/styles.scss';
 import MovieCardGenerator from './js/_frontpage_movie_cards.js';
 import LoadAllFilmsPage from './js/LoadAllFilmsPage.js';
 import ApiBackend from './js/ApiBackend.js';
+import initLiveEvents from './js/_initLiveEvents.js';
 
 if (document.querySelector('.movies__list-all')) {
   const loadingMessage = document.createElement('div');
@@ -22,3 +23,5 @@ if (document.querySelector('.movies__list-all')) {
   const movieCardGenerator = new MovieCardGenerator(backend);
   movieCardGenerator.CardGenerator(4);
 }
+
+document.addEventListener('DOMContentLoaded', initLiveEvents);
