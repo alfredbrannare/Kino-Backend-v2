@@ -1,24 +1,20 @@
 import express from 'express';
-import fs from 'fs/promises'
+import fs from 'fs/promises';
 
 const app = express();
 
-app.get('/', async (request, response) => {
+app.get('/', (request, response) => {
+    response.redirect('/kino-bio-projekt');
+});
+
+app.use('/kino-bio-projekt', express.static('./dist'));
+
+app.get('/kino-bio-projekt', async (request, response) => {
     const buf = await fs.readFile('./dist/index.html');
     const html = buf.toString();
     response.send(html);
 });
 
-app.get('/:name', async (request, response) => {
-    const buf = await fs.readFile('./dist/index.html');
-    const html = buf.toString();
-    const name = request.params.name;
-
-    const changedHtml = html.replace('Kino', name);
-
-    response.send(changedHtml);
+app.listen(3080, () => {
+    console.log('Server running on http://localhost:3080');
 });
-
-app.use('/kino-bio-projekt/assets', express.static('./dist/assets'));
-
-app.listen(3080);
