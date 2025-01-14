@@ -1,7 +1,11 @@
 import express from 'express';
-import fs from 'fs/promises';
+import { engine } from 'express-handlebars';
+import renderHeader from './src/lib/renderPage.js';
 
 const app = express();
+app.engine('handlebars', engine());
+app.set('view engine', 'handlebars');
+app.set('views', './templates');
 
 app.get('/', (request, response) => {
     response.redirect('/kino-bio-projekt');
