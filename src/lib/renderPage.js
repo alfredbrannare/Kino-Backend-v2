@@ -24,7 +24,7 @@ const headerMenu = [
     {
         label: 'OM OSS',
         id: 'omoss',
-        link: 'about-us',
+        link: 'about',
     },
 ];
 
