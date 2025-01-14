@@ -53,26 +53,31 @@
     <div class="footer__section">
       <h2 class="footer__heading">OM OSS</h2>
       <ul class="footer__list">
-        <li class="footer__item"><a href="about-us.html" class="footer__link">OM KINO</a></li>
-        <li class="footer__item"><a href="#" class="footer__link">FRÅGOR SVAR</a></li>
-        <li class="footer__item"><a href="#" class="footer__link">KONTAKTA OSS</a></li>
+        {{#each footerSection1}}
+        <li class="footer__item">
+          <a class="footer__link" href="{{this.link}}">{{this.label}}</a>
+          </li>
+        {{/each}}
       </ul>
     </div>
     <div class="footer__section">
       <h2 class="footer__heading">BIOUPPLEVELSER</h2>
       <ul class="footer__list">
-        <li class="footer__item"><a href="#" class="footer__link">PRESENTKORT</a></li>
-        <li class="footer__item"><a href="#" class="footer__link">TILLGÄNGLIGHET</a></li>
-        <li class="footer__item"><a href="#" class="footer__link">MEDLEMSKAP</a></li>
-        <li class="footer__item"><a href="#" class="footer__link">BISTRO-BIO</a></li>
-        <li class="footer__item"><a href="#" class="footer__link">EVENEMANG</a></li>
+        {{#each footerSection2}}
+        <li class="footer__item">
+          <a class="footer__link" href="{{this.link}}">{{this.label}}</a>
+          </li>
+        {{/each}}
       </ul>
     </div>
     <div class="footer__section">
       <h2 class="footer__heading">SOCIALT</h2>
       <ul class="footer__list">
-        <li class="footer__item"><a href="#" class="footer__link">FACEBOOK</a></li>
-        <li class="footer__item"><a href="#" class="footer__link">INSTAGRAM</a></li>
+        {{#each footerSection3}}
+        <li class="footer__item">
+          <a class="footer__link" href="{{this.link}}">{{this.label}}</a>
+          </li>
+        {{/each}}
       </ul>
     </div>
   </footer>
