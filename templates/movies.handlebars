@@ -1,3 +1,15 @@
-    <div class="moviesSecond">
-      <div class="movies__message"></div>
-    </div>
+<section class="movies">
+  <ul class="movies__list">
+    {{#each movies}}
+    <li class="movie__list-item">
+      <a href="/movie/{{this.id}}" id="{{this.id}}">
+        <article class="movie-card">
+          <img class="movie-card__image" src="{{this.attributes.image.url}}"
+            alt="Omslag för filmen {{this.attributes.title}}">
+          <h3 class="movie-card__title">{{this.attributes.title}}</h3>
+        </article>
+      </a>
+    </li>
+    {{/each}}
+  </ul>
+</section>

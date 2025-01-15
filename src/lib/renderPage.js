@@ -48,16 +48,13 @@ const footerSection3 = [
 ];
 
 
-export default async function renderHeader(response, page) {
-    response.render(page, {
+export default function getHeaderFooterData(page) {
+    return {
         headerItems: headerMenu.map((item) => {
-            return {
-                label: item.label,
-                link: item.link,
-            };
+            return { label: item.label, link: item.link };
         }),
         footerSection1,
         footerSection2,
         footerSection3,
-    });
+    };
 }

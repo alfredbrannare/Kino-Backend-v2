@@ -1,9 +1,6 @@
 // vite will now compile our scss
 import './styles/styles.scss';
 //JS Import
-import MovieCardGenerator from './js/_frontpage_movie_cards.js';
-import LoadAllFilmsPage from './js/LoadAllFilmsPage.js';
-import ApiBackend from './js/ApiBackend.js';
 import MobileMenu from './js/MobileMenu.js';
 import initLiveEvents from './js/_initLiveEvents.js';
 
@@ -19,11 +16,6 @@ console.log('Link to API:' + backend);
 const filmList = new LoadAllFilmsPage(backend);
 const moviesContainer = document.querySelector('.moviesSecond')
 
-filmList.start(moviesContainer, loadingMessage);
-} else {
-  const backend = new ApiBackend('https://kino-bio-projekt.onrender.com');
-  const movieCardGenerator = new MovieCardGenerator(backend);
-  movieCardGenerator.CardGenerator(4);
-}
+} 
 
 document.addEventListener('DOMContentLoaded', initLiveEvents);
