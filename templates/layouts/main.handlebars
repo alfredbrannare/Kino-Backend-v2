@@ -22,11 +22,11 @@
     </div>
     <ul class="hamburger__items">
       <button class="hamburger__close"></button>
-      <li class="hamburger__list"><a href="#">BILJETTER</a></li>
-      <li class="hamburger__list"><a href="#">EVENEMANG</a></li>
-      <li class="hamburger__list"><a href="movies.html">FILMER</a></li>
-      <li class="hamburger__list"><a href="#">MEDLEMSKAP</a></li>
-      <li class="hamburger__list"><a href="about-us.html">OM OSS</a></li>
+      {{#each headerItems}}
+        <li class="hamburger__list">
+          <a href="/{{this.link}}">{{this.label}}</a>
+        </li>
+        {{/each}}
     </ul>
 
     <a href="/">
@@ -36,7 +36,7 @@
       <ul class="header__nav-list">
         {{#each headerItems}}
         <li class="header__nav-item">
-          <a class="header__nav-link" href="{{this.link}}">{{this.label}}</a>
+          <a class="header__nav-link" href="/{{this.link}}">{{this.label}}</a>
         </li>
         {{/each}}
       </ul>
@@ -55,7 +55,7 @@
       <ul class="footer__list">
         {{#each footerSection1}}
         <li class="footer__item">
-          <a class="footer__link" href="{{this.link}}">{{this.label}}</a>
+          <a class="footer__link" href="/{{this.link}}">{{this.label}}</a>
           </li>
         {{/each}}
       </ul>
@@ -65,7 +65,7 @@
       <ul class="footer__list">
         {{#each footerSection2}}
         <li class="footer__item">
-          <a class="footer__link" href="{{this.link}}">{{this.label}}</a>
+          <a class="footer__link" href="/{{this.link}}">{{this.label}}</a>
           </li>
         {{/each}}
       </ul>
@@ -75,7 +75,7 @@
       <ul class="footer__list">
         {{#each footerSection3}}
         <li class="footer__item">
-          <a class="footer__link" href="{{this.link}}">{{this.label}}</a>
+          <a class="footer__link" href="/{{this.link}}">{{this.label}}</a>
           </li>
         {{/each}}
       </ul>
