@@ -3,17 +3,21 @@ import { engine } from 'express-handlebars';
 import getHeaderFooterData from './src/lib/renderPage.js';
 import { loadMovies } from './src/lib/movies.js';
 import { loadMovie } from './src/lib/movies.js';
-import path from 'path';
+import Handlebars from 'handlebars';
 
 const app = express();
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', './templates');
 
+Handlebars.registerHelper('limit', function(array, limit){
+    return array.slice(0, limit);
+});
+
 app.get('/', async (request, response) => {
     const movies = await loadMovies();
     const pageData = getHeaderFooterData('index');
-    response.render('index', { movies, ...pageData });
+    response.render('index', { movies, limitMovies: true, ...pageData });
 });
 
 app.get('/about', (request, response) => {
@@ -29,7 +33,8 @@ app.get('/movies', async (request, response) => {
 
 app.get('/movie/:movieId', async (request, response) => {
     const movie = await loadMovie(request.params.movieId);
-    response.render('movie', { movie });
+    const pageData = getHeaderFooterData('movie');
+    response.render('movie', { movie, ...pageData });
 });
 
 app.use('/kino-bio-projekt', express.static('./dist'));

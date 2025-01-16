@@ -1,7 +1,7 @@
   <section class="movies">
       <h2 class="movies__header">FILMER PÅ KINO</h2>
       <ul class="movies__list">
-            {{#each movies}}
+            {{#each (limit movies 4)}}
     <li class="movie__list-item">
       <a href="/movie/{{this.id}}" id="{{this.id}}">
         <article class="movie-card">
